@@ -507,7 +507,7 @@ class Str
      */
     public static function isAscii($value)
     {
-        return ASCII::is_ascii((string) $value);
+        return mb_detect_encoding((string) $value, ['ASCII'], true) === 'ASCII';
     }
 
     /**
